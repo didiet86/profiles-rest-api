@@ -36,7 +36,29 @@ python manage.py makemigrations profiles_api
 // proses migrasi ke database
 python manage.py migrate
 
+// tes admin django
+python manage.py runserver 0.0.0.0:8000
+http://127.0.0.1:8000/admin/
 
+// ################################################
+// API Django Features (Django REST Framework Views)
+
+
+// Create APIViews
+Buka profiles_api/views.py -> buat class 1 HelloApiView
+buka file profiles_project/urls.py -> pointing dengan menambahkan include
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include('profiles_api.urls'))
+]
+
+// diatas adalah pointing untuk bisa akses url /api pada web django project
+
+kemudian buat file profiles_api/urls.py
 
 
 Catatan perkembangan belajar python3
