@@ -1,2 +1,45 @@
+Step step django
+=================
+// membuat hello world python
+python hello_world.py
+
+// seeting path environtment django di vagrant
+python -m venv ~/env
+
+// Mengaktifkan environtment virtual django (posisi path di /vagrant )
+source ~/env/bin/activate
+
+// menonaktifkan environtment virtual django
+deactivate
+
+// cara install django dan django framework (skript bisa dilihat di file requirements.txt)
+pip install -r requirements.txt
+
+// membuat aplikasi django
+django-admin.py startproject profiles_project .
+
+// membuat api aplikasi django
+python manage.py startapp profiles_api
+
+// test djanggo di web / protokol http / start webserver
+python manage.py runserver 0.0.0.0:8000
+
+// membuat user models
+// membuat 2 class pertama di models.py
+// kemudian dilanjtkan membuka file dari profiles_project/setting.py kode dibawah ini
+AUTH_USER_MODEL = 'profiles_api.UserProfile'
+
+// kemudian di vagrant membuat migrasi models yang sudah dibuat diatas
+// posisi di /vagrant
+python manage.py makemigrations profiles_api
+
+// proses migrasi ke database
+python manage.py migrate
+
+
+
+
 Catatan perkembangan belajar python3
 ====================================
+
+6. Setup the Database -> 2. Create our user database model.mp4
