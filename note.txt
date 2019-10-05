@@ -45,20 +45,34 @@ http://127.0.0.1:8000/admin/
 
 
 // Create APIViews
-Buka profiles_api/views.py -> buat class 1 HelloApiView
-buka file profiles_project/urls.py -> pointing dengan menambahkan include
 
-from django.contrib import admin
-from django.urls import path, include
+// #### Membuat HelloApiView
+  Buka profiles_api/views.py -> buat class 1 HelloApiView
+  buka file profiles_project/urls.py -> pointing dengan menambahkan include
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('profiles_api.urls'))
-]
+  from django.contrib import admin
+  from django.urls import path, include
 
-// diatas adalah pointing untuk bisa akses url /api pada web django project
+  urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('api/', include('profiles_api.urls'))
+  ]
 
-kemudian buat file profiles_api/urls.py
+  // diatas adalah pointing untuk bisa akses url /api pada web django project
+
+  kemudian buat file profiles_api/urls.py
+// #### Membuat HelloApiView
+
+
+// Membuat Serializer untuk (POST, PATCH, PUT, DELETE)
+// Serializer merupakan kerangka kerja di djanggo yang bisa membuat inputan di django menjadi objek pada python, jadi untuk fungsi rest akan menggunakan feature Serializer pada django
+
+  Langkah selanjutnya buat file pada profiles_api/serializers.py
+
+// Buat tampilan POST API Django
+  buka fila profiles_api/views.py -> File Views.py akan berhubungan dengan serializers.py 
+
+
 
 
 Catatan perkembangan belajar python3
